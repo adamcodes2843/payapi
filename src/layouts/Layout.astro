@@ -1,0 +1,41 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Public+Sans&display=swap" rel="stylesheet"> 
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--darkPink: rgb(186, 66, 112);
+		--linkWaterWhite: rgb(251, 252, 254);
+		--sanJuanBlue: rgb(54, 83, 107);
+		--mirageBlue: rgb(27, 38, 47);
+		--charmPink: rgb(218, 109, 151);
+		--lightSanJuanBlue: rgb(108, 130, 148);
+	}
+	html {
+		background-color: #EDF3F8;
+		color: var(--sanJuanBlue);
+		font-family: 'DM Serif Display', serif;
+		font-family: 'Public Sans', sans-serif;
+	}
+</style>
