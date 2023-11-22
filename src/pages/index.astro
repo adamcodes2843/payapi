@@ -2,14 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro'
+import HomeStart from '../components/HomeStart.astro';
+import Connections from '../components/Connections.astro';
 ---
 
 <Layout title="PayAPI">
 	<header>
 		<Nav />
+		<div class="header-circle"></div>
+		<img src="../../assets/home/desktop/illustration-phone-mockup.svg" alt="phone" class="phone">
 	</header>
 	<main>
-		<h1>hello</h1>
+		<HomeStart />
+		<Connections />
 	</main>
 	<Footer />
 </Layout>
@@ -17,5 +22,24 @@ import Footer from '../components/Footer.astro'
 <style>
 	main {
 		
+	}
+	.header-circle {
+		width: 780px;
+		height: 780px;
+		background: rgba(54,83,107,0.2);
+		border-radius: 100%;
+		position: absolute;
+		top: -560px;
+		right: 50%;
+		margin-right: -390px;
+		z-index: -1;
+	}
+	.phone {
+		width: 200px;
+		height: 300px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 20px;
 	}
 </style>

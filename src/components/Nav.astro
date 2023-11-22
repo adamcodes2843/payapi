@@ -1,11 +1,36 @@
 ---
-import icon from '../../public/assets/shared/Group-3.png'
+import SmallMenu from './SmallMenu.svelte'
 ---
 
-<nav>
-   <h1><span>pay</span>api</h1>
+<nav class="nav">
+    <a href='/' class="nav-box">
+    <img src="../../assets/shared/Group-3.png" alt="icon" class="icon" />
+    <h1 style="font-weight:900">pay<span style="font-weight:100">api</span></h1>
+    </a>
+    <SmallMenu client:visible />
 </nav>
 
 <style>
-    
+    .nav-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+        font-size: 24px;
+        line-height: 25px;
+        text-decoration: none;
+        color: var(--sanJuanBlue);
+    }
+    .nav {
+        height: 38px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem 1.5rem 0.5rem;
+    }
+    .icon {
+        height: 38px;
+        width: 38px;
+    }
 </style>
