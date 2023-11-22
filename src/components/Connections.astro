@@ -2,13 +2,19 @@
 ---
 
 <section>
-    <div class="partner-grid">
-        <img src="../../assets/shared/desktop/tesla.svg" alt="tesla" class="partner">
-        <img src="../../assets/shared/desktop/microsoft.svg" alt="microsoft" class="partner">
-        <img src="../../assets/shared/desktop/hewlett-packard.svg" alt="hewlett-packard" class="partner">
-        <img src="../../assets/shared/desktop/oracle.svg" alt="oracle" class="partner">
-        <img src="../../assets/shared/desktop/google.svg" alt="google" class="partner">
-        <img src="../../assets/shared/desktop/nvidia.svg" alt="nvidia" class="partner">
+    <div class="partners">
+        <div class="partner-line">
+            <img src="../../assets/shared/desktop/tesla2.svg" alt="tesla" class="partner">
+            <img src="../../assets/shared/desktop/microsoft2.svg" alt="microsoft" class="partner">
+        </div>
+        <div class="partner-line">
+            <img src="../../assets/shared/desktop/hewlett-packard2.svg" alt="hewlett-packard" class="partner">
+            <img src="../../assets/shared/desktop/oracle2.svg" alt="oracle" class="partnert">
+        </div>
+        <div class="partner-line">
+            <img src="../../assets/shared/desktop/google2.svg" alt="google" class="partner">
+            <img src="../../assets/shared/desktop/nvidia2.svg" alt="nvidia" class="partner">
+        </div>
     </div>
     <h3>Who we work with</h3>
     <p>Today, millions of people around the world have successfully connected their accounts to apps they love using our API. We provide developers with the tools they need to create easy and accessible experiences for their users. </p>
@@ -22,14 +28,29 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-        gap: 10px;
+        gap: 1.5rem;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        padding-right: 2rem;
+        padding-left: 2rem;
     }
-    .partner-grid {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: auto auto auto;
+    .partners {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+    .partner-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2.5rem;
+    }
+    .left {
+        float: left;
+    }
+    .right {
+        float: right;
     }
     .about {
         width: 129px;
@@ -40,15 +61,12 @@
         border: 1px solid var(--linkWaterWhite);
         color: var(--linkWaterWhite);
         border-radius: 50px;
+        margin-top: 1rem;
     }
     h3 {
         font-family: 'DM Serif Display', serif;
         line-height: 40px;
         font-size: 32px;
-    }
-    p {
         text-align: center;
-        line-height: 28px;
-        opacity: 80%;
     }
 </style>
