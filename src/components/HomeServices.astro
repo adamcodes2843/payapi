@@ -1,0 +1,49 @@
+---
+let services = [
+    {
+        image: '../../assets/home/desktop/icon-personal-finances.svg',
+        title: 'Personal Finances',
+        content: 'Consolidate financial data from multiple sources and categorize transactions up to 2 years of history. Analyze reports to reconcile activities in your account.'
+    },
+    {
+        image: '../../assets/home/desktop/icon-banking-and-coverage.svg',
+        title: 'Banking & Coverage',
+        content: 'With our platform, you can speed up account onboarding and support ongoing payments for checking, savings, credit card, and brokerage accounts.'
+    },
+    {
+        image: '../../assets/home/desktop/icon-consumer-payments.svg',
+        title: 'Consumer Payments',
+        content: 'It’s easier to set up secure bank payments with us through a flow designed with the user experience in mind. Customers could instantly authenticate their account.'
+    }
+]
+---
+
+<section>
+    <ul>
+        {services.map((service) => (
+            <li>
+                <img src={service.image} alt={service.title} />
+                <h3>{service.title}</h3>
+                <p>{service.content}</p>
+            </li>
+        ))}
+    </ul>
+</section>
+
+<style>
+    section {
+        margin: 2rem 0 5rem
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+    li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+</style>

@@ -3,15 +3,23 @@ import SmallMenu from './SmallMenu.svelte'
 ---
 
 <nav class="nav">
-    <a href='/' class="nav-box">
-    <img src="../../assets/shared/Group-3.png" alt="icon" class="icon" />
-    <h1 style="font-weight:900">pay<span style="font-weight:100">api</span></h1>
+    <a href='/' class="icon-box">
+        <img src="../../assets/shared/Group-3.png" alt="icon" class="icon" />
+        <h1 style="font-weight:900">pay<span style="font-weight:100">api</span></h1>
     </a>
     <SmallMenu client:visible />
 </nav>
 
 <style>
-    .nav-box {
+    .nav {
+        height: 38px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem 1.5rem 0.5rem;
+    }
+    .icon-box {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -20,14 +28,6 @@ import SmallMenu from './SmallMenu.svelte'
         line-height: 25px;
         text-decoration: none;
         color: var(--sanJuanBlue);
-    }
-    .nav {
-        height: 38px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin: 2rem 1.5rem 0.5rem;
     }
     .icon {
         height: 38px;

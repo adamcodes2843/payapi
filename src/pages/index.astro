@@ -7,6 +7,7 @@ import Connections from '../components/Connections.astro';
 import EasyToImplement from '../components/EasyToImplement.astro';
 import SimpleUI from '../components/SimpleUI.astro'
 import ReadyToStart from '../components/ReadyToStart.astro';
+import HomeServices from '../components/HomeServices.astro';
 ---
 
 <Layout title="PayAPI">
@@ -20,9 +21,13 @@ import ReadyToStart from '../components/ReadyToStart.astro';
 		<Connections />
 		<EasyToImplement />
 		<SimpleUI />
+		<HomeServices />
 		<ReadyToStart />
 	</main>
-	<Footer />
+	<footer>
+		<Footer />
+		<div class="footer-circle"></div>
+	</footer>
 </Layout>
 
 <style>
@@ -47,5 +52,22 @@ import ReadyToStart from '../components/ReadyToStart.astro';
 		margin-left: auto;
 		margin-right: auto;
 		padding-left: 20px;
+	}
+	footer {
+		position: relative;
+		overflow: hidden;
+        background-color: var(--mirageBlue);
+		margin-top: 5rem;
+	}
+	.footer-circle {
+		width: 780px;
+		height: 780px;
+		background: rgba(54,83,107,0.15);
+		border-radius: 100%;
+		position: absolute;
+		bottom: -615px;
+		right: 50%;
+		margin-right: -390px;
+		z-index: 1;
 	}
 </style>
