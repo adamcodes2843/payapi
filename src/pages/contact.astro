@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro'
 import ReadyToStart from '../components/ReadyToStart.astro';
+import Form from '../components/Form.svelte'
 ---
 <Layout title="PayAPI Contact">
     <header>
@@ -11,21 +12,16 @@ import ReadyToStart from '../components/ReadyToStart.astro';
     </header>
     <main>
         <h1>{"Submit a help request and we'll get in touch shortly."}</h1>
+        <Form client:load />
         <section class="partner-section">
             <h4> Join the thousands of innovators already building with us</h4>
             <div class="partners">
-                <div class="partner-line">
-                    <img src="../../assets/shared/desktop/tesla.svg" alt="tesla" class="partner">
-                    <img src="../../assets/shared/desktop/microsoft.svg" alt="microsoft" class="partner">
-                </div>
-                <div class="partner-line">
-                    <img src="../../assets/shared/desktop/hewlett-packard.svg" alt="hewlett-packard" class="partner">
-                    <img src="../../assets/shared/desktop/oracle.svg" alt="oracle" class="partnert">
-                </div>
-                <div class="partner-line">
-                    <img src="../../assets/shared/desktop/google.svg" alt="google" class="partner">
-                    <img src="../../assets/shared/desktop/nvidia.svg" alt="nvidia" class="partner">
-                </div>
+                <img src="../../assets/shared/desktop/tesla.svg" alt="tesla" class="partner">
+                <img src="../../assets/shared/desktop/microsoft.svg" alt="microsoft" class="partner">
+                <img src="../../assets/shared/desktop/hewlett-packard.svg" alt="hewlett-packard" class="partner">
+                <img src="../../assets/shared/desktop/oracle.svg" alt="oracle" class="partnert">
+                <img src="../../assets/shared/desktop/google.svg" alt="google" class="partner">
+                <img src="../../assets/shared/desktop/nvidia.svg" alt="nvidia" class="partner">
             </div>
         </section>
         <ReadyToStart />
@@ -40,19 +36,13 @@ import ReadyToStart from '../components/ReadyToStart.astro';
         align-items: center;
     }
     .partners {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 2.5rem;
         margin: 2.5rem 0;
     }
     img {
         max-width: 115px;
-    }
-    .partner-line {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 2.5rem;
     }
     h1 {
         font-family: 'DM Serif Display', serif;

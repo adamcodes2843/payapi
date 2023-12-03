@@ -2,19 +2,14 @@
 ---
 
 <section>
+    <div class="header-circle"></div>
     <div class="partners">
-        <div class="partner-line">
-            <img src="../../assets/shared/desktop/tesla2.svg" alt="tesla" class="partner">
-            <img src="../../assets/shared/desktop/microsoft2.svg" alt="microsoft" class="partner">
-        </div>
-        <div class="partner-line">
-            <img src="../../assets/shared/desktop/hewlett-packard2.svg" alt="hewlett-packard" class="partner">
-            <img src="../../assets/shared/desktop/oracle2.svg" alt="oracle" class="partnert">
-        </div>
-        <div class="partner-line">
-            <img src="../../assets/shared/desktop/google2.svg" alt="google" class="partner">
-            <img src="../../assets/shared/desktop/nvidia2.svg" alt="nvidia" class="partner">
-        </div>
+        <img src="../../assets/shared/desktop/tesla2.svg" alt="tesla" class="partner">
+        <img src="../../assets/shared/desktop/microsoft2.svg" alt="microsoft" class="partner">
+        <img src="../../assets/shared/desktop/hewlett-packard2.svg" alt="hewlett-packard" class="partner">
+        <img src="../../assets/shared/desktop/oracle2.svg" alt="oracle" class="partnert">
+        <img src="../../assets/shared/desktop/google2.svg" alt="google" class="partner">
+        <img src="../../assets/shared/desktop/nvidia2.svg" alt="nvidia" class="partner"> 
     </div>
     <h3>Who we work with</h3>
     <p>Today, millions of people around the world have successfully connected their accounts to apps they love using our API. We provide developers with the tools they need to create easy and accessible experiences for their users. </p>
@@ -33,21 +28,29 @@
         padding-bottom: 6rem;
         padding-right: 2rem;
         padding-left: 2rem;
+        position: relative;
+        overflow: hidden;
     }
+    .header-circle {
+		width: 780px;
+		height: 780px;
+		background: rgba(54,83,107,0.2);
+		border-radius: 100%;
+		position: absolute;
+		top: -600px;
+		right: 50%;
+		margin-right: -390px;
+		z-index: 2;
+	}
     img {
         max-width: 115px;
     }
     .partners {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 2.5rem;
         margin-bottom: 2.5rem;
-    }
-    .partner-line {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 2.5rem;
+        z-index: 3;
     }
     .left {
         float: left;
