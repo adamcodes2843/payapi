@@ -24,10 +24,7 @@ import HomeServices from '../components/HomeServices.astro';
 		<HomeServices />
 		<ReadyToStart />
 	</main>
-	<footer>
-		<Footer />
-		<div class="footer-circle"></div>
-	</footer>
+	<Footer />
 </Layout>
 
 <style>
@@ -52,22 +49,5 @@ import HomeServices from '../components/HomeServices.astro';
 		margin-left: auto;
 		margin-right: auto;
 		padding-left: 20px;
-	}
-	footer {
-		position: relative;
-		overflow: hidden;
-        background-color: var(--mirageBlue);
-		margin-top: 5rem;
-	}
-	.footer-circle {
-		width: 780px;
-		height: 780px;
-		background: rgba(54,83,107,0.15);
-		border-radius: 100%;
-		position: absolute;
-		bottom: -615px;
-		right: 50%;
-		margin-right: -390px;
-		z-index: 1;
 	}
 </style>

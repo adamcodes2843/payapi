@@ -1,21 +1,23 @@
 ---
 
 ---
-
-<section>
-    <a href='/' class="icon-box">
-        <img src="../../assets/shared/Group-22.png" alt="icon" class="icon" />
-        <h1 style="font-weight:900">pay<span style="font-weight:100">api</span></h1>
-    </a>
-    <a href="/pricing" class="link">Pricing</a>
-    <a href="/about" class="link">About</a>
-    <a href="/contact" class="link">Contact</a>
-    <div class="socials">
-        <a href="/"><img src="../../assets/shared/desktop/facebook.svg" alt="facebook"></a>
-        <a href="/"><img src="../../assets/shared/desktop/twitter.svg" alt="twitter"></a>
-        <a href="/"><img src="../../assets/shared/desktop/linkedin.svg" alt="linkedin"></a>
-    </div>
-</section>
+<footer>
+    <section>
+        <a href='/' class="icon-box">
+            <img src="../../assets/shared/Group-22.png" alt="icon" class="icon" />
+            <h1 style="font-weight:900">pay<span style="font-weight:100">api</span></h1>
+        </a>
+        <a href="/pricing" class="link">Pricing</a>
+        <a href="/about" class="link">About</a>
+        <a href="/contact" class="link">Contact</a>
+        <div class="socials">
+            <a href="/"><img src="../../assets/shared/desktop/facebook.svg" alt="facebook"></a>
+            <a href="/"><img src="../../assets/shared/desktop/twitter.svg" alt="twitter"></a>
+            <a href="/"><img src="../../assets/shared/desktop/linkedin.svg" alt="linkedin"></a>
+        </div>
+    </section>
+    <div class="footer-circle"></div>
+</footer>
 
 <style>
     section {
@@ -29,6 +31,23 @@
         padding: 3rem;
         z-index: 2;
     }
+    footer {
+		position: relative;
+		overflow: hidden;
+        background-color: var(--mirageBlue);
+		margin-top: 5rem;
+	}
+	.footer-circle {
+		width: 780px;
+		height: 780px;
+		background: rgba(54,83,107,0.15);
+		border-radius: 100%;
+		position: absolute;
+		bottom: -615px;
+		right: 50%;
+		margin-right: -390px;
+		z-index: 1;
+	}
     .icon-box {
         display: flex;
         flex-direction: row;

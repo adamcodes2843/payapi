@@ -2,17 +2,154 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro'
+import PlanCard from '../components/PlanCard.astro';
+import ReadyToStart from '../components/ReadyToStart.astro';
+
+let plans = [
+    {
+        plan: 'Free Plan',
+        cost: "$0.00",
+        services: [
+            {
+                service: 'Transactions',
+                provided: true,
+            },
+            {
+                service: 'Auth',
+                provided: true,
+            },
+            {
+                service: 'Identity',
+                provided: true,
+            },
+            {
+                service: 'Investments',
+                provided: false,
+            },
+            {
+                service: 'Assets',
+                provided: false,
+            },
+            {
+                service: 'Liabilities',
+                provided: false,
+            },
+            {
+                service: 'Income',
+                provided: false
+            }
+        ]
+    },
+    {
+        plan: 'Basic Plan',
+        cost: "$249.00",
+        services: [
+            {
+                service: 'Transactions',
+                provided: true,
+            },
+            {
+                service: 'Auth',
+                provided: true,
+            },
+            {
+                service: 'Identity',
+                provided: true,
+            },
+            {
+                service: 'Investments',
+                provided: true,
+            },
+            {
+                service: 'Assets',
+                provided: true,
+            },
+            {
+                service: 'Liabilities',
+                provided: false,
+            },
+            {
+                service: 'Income',
+                provided: false
+            } 
+        ]
+    },
+    {
+        plan: 'Premium Plan',
+        cost: "$499.00",
+        services: [
+            {
+                service: 'Transactions',
+                provided: true,
+            },
+            {
+                service: 'Auth',
+                provided: true,
+            },
+            {
+                service: 'Identity',
+                provided: true,
+            },
+            {
+                service: 'Investments',
+                provided: true,
+            },
+            {
+                service: 'Assets',
+                provided: true,
+            },
+            {
+                service: 'Liabilities',
+                provided: true,
+            },
+            {
+                service: 'Income',
+                provided: true
+            } 
+        ] 
+    }
+]
 ---
 <Layout title="PayAPI Pricing">
     <header>
         <Nav />
+        <div class="header-circle"></div>
     </header>
     <main>
         <h1>Pricing</h1>
+        <section class="card">
+            {plans.map((plan) => (
+                <PlanCard plan={plan.plan} cost={plan.cost} services={plan.services} />
+            ))}
+        </section>
+        <ReadyToStart />
     </main>
     <Footer />
 </Layout>
 
 <style>
-    
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        margin-bottom: 5rem;
+    }
+    h1 {
+        font-family: 'DM Serif Display', serif;
+        font-weight: 400;
+        font-size: 36px;
+        text-align: center;
+        margin: 3rem 0 2.5rem;
+    }
+    .header-circle {
+		width: 780px;
+		height: 780px;
+		background: rgba(54,83,107,0.2);
+		border-radius: 100%;
+		position: absolute;
+		top: -660px;
+		right: 50%;
+		margin-right: -660px;
+		z-index: -1;
+	}
 </style>

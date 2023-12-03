@@ -42,6 +42,7 @@
         color: var(--linkWaterWhite);
         padding: 2.2rem 1.5rem;
         text-align: right;
+        z-index: 50;
     }
     .side-bar-list {
         margin-top: 1.5rem;

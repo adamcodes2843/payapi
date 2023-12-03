@@ -2,17 +2,118 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro'
+import ReadyToStart from '../components/ReadyToStart.astro';
+
+let team = [
+    {
+        title: 'Team Members',
+        stat: '300+'
+    },
+    {
+        title: 'Offices in the US',
+        stat: 3
+    },
+    {
+        title: 'transactions Analyzed',
+        stat: '10M+'
+    }
+]
 ---
 <Layout title="PayAPI About">
     <header>
         <Nav />
+        <div class="header-circle"></div>
     </header>
     <main>
-        <h1>About</h1>
+        <h1>We empower innovators by delivering access to the financial system</h1>
+        <div class="about-card">
+            <h4>Our Vision</h4>
+            <p>Our main goal is to build beautiful consumer experiences along with developer-friendly infrastructure. The result is an intelligent tool that gives everyone the ability to create amazing products that solve big problems. We are deeply focused on democratizing financial services through technology. </p>
+        </div>
+        <div class="about-card">
+            <h4>Our Business</h4>
+            <p>At the core of our platform is the technical infrastructure APIs that connect consumers. Our innovative product provides key insights for businesses and individuals, as well as robust reporting for traditional financial institutions and developers. </p>
+        </div>
+        <img src='../../assets/about/mobile/image-team-members.jpg' alt="">
+        <section class="about-numbers">
+            {team.map((item) => (
+                <h5>{item.title}</h5>
+                <p class="number">{item.stat}</p>
+            ))}
+        </section>
+        <div class="about-card">
+            <h4>The Culture</h4>
+            <p>We strongly believe there's always an opportunity to learn from each other outside of day-to-day work, whether it's company-wide offsites, internal hackathons, or co-worker meetups. We always value cross-team collaboration and diversity of thought, no matter the job title.</p>
+        </div>
+        <div class="about-card">
+            <h4>The People</h4>
+            <p>We're all passionate about building a more efficient and inclusive financial infrastructure together. At PayAPI, we have diverse backgrounds and skills.</p>
+        </div>
+        <ReadyToStart />
     </main>
     <Footer />
 </Layout>
 
 <style>
-    
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .number {
+        font-family: 'DM Serif Display', serif;
+        font-size: 56px;
+        line-height: 72px;
+        color: var(--darkPink);
+        font-weight: 400;
+        opacity: 100%;
+    }
+    .about-numbers {
+        border-top: 1px solid rgba(54, 83, 107, 0.2);
+        border-bottom: 1px solid rgba(54, 83, 107, 0.2);
+        margin: 1rem 1rem 3rem;
+        padding: 1rem 0;
+    }
+    .about-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin: 0 1rem 3rem;
+    }
+    img {
+        width: 100%;
+        margin: 2rem 0;
+    }
+    h1 {
+        font-family: 'DM Serif Display', serif;
+        font-weight: 400;
+        font-size: 32px;
+        text-align: center;
+        margin: 3rem 1rem;
+        line-height: 36px;
+    }
+    h4 {
+        font-family: 'DM Serif Display', serif;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+    }
+    h5 {
+        font-size: 16px;
+        opacity: 70%;
+        font-weight: 400;
+        line-height: 28px;
+    }
+    .header-circle {
+		width: 780px;
+		height: 780px;
+		background: rgba(54,83,107,0.2);
+		border-radius: 100%;
+		position: absolute;
+		top: -660px;
+		right: 50%;
+		margin-right: -660px;
+		z-index: -1;
+	}
 </style>

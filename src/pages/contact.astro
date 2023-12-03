@@ -2,17 +2,83 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro'
+import ReadyToStart from '../components/ReadyToStart.astro';
 ---
 <Layout title="PayAPI Contact">
     <header>
         <Nav />
+        <div class="header-circle"></div>
     </header>
     <main>
-        <h1>Contact</h1>
+        <h1>{"Submit a help request and we'll get in touch shortly."}</h1>
+        <section class="partner-section">
+            <h4> Join the thousands of innovators already building with us</h4>
+            <div class="partners">
+                <div class="partner-line">
+                    <img src="../../assets/shared/desktop/tesla.svg" alt="tesla" class="partner">
+                    <img src="../../assets/shared/desktop/microsoft.svg" alt="microsoft" class="partner">
+                </div>
+                <div class="partner-line">
+                    <img src="../../assets/shared/desktop/hewlett-packard.svg" alt="hewlett-packard" class="partner">
+                    <img src="../../assets/shared/desktop/oracle.svg" alt="oracle" class="partnert">
+                </div>
+                <div class="partner-line">
+                    <img src="../../assets/shared/desktop/google.svg" alt="google" class="partner">
+                    <img src="../../assets/shared/desktop/nvidia.svg" alt="nvidia" class="partner">
+                </div>
+            </div>
+        </section>
+        <ReadyToStart />
     </main>
     <Footer />
 </Layout>
 
 <style>
-    
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .partners {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        margin: 2.5rem 0;
+    }
+    img {
+        max-width: 115px;
+    }
+    .partner-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2.5rem;
+    }
+    h1 {
+        font-family: 'DM Serif Display', serif;
+        font-weight: 400;
+        font-size: 32px;
+        text-align: center;
+        margin: 3rem 1rem;
+        line-height: 36px;
+    }
+    h4 {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 400;
+        font-family: 'DM Serif Display', serif;
+        opacity: 75%;
+        text-align: center;
+    }
+    .header-circle {
+		width: 780px;
+		height: 780px;
+		background: rgba(54,83,107,0.2);
+		border-radius: 100%;
+		position: absolute;
+		top: -660px;
+		right: 50%;
+		margin-right: -660px;
+		z-index: -1;
+	}
 </style>
