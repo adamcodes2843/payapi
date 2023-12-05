@@ -44,31 +44,21 @@ import Form from '../components/Form.svelte'
     img {
         max-width: 115px;
     }
-    h1 {
-        font-family: 'DM Serif Display', serif;
-        font-weight: 400;
-        font-size: 32px;
-        text-align: center;
-        margin: 3rem 1rem;
-        line-height: 36px;
-    }
     h4 {
-        font-size: 24px;
-        line-height: 32px;
-        font-weight: 400;
-        font-family: 'DM Serif Display', serif;
         opacity: 75%;
         text-align: center;
+        max-width: 445px;
     }
-    .header-circle {
-		width: 780px;
-		height: 780px;
-		background: rgba(54,83,107,0.2);
-		border-radius: 100%;
-		position: absolute;
-		top: -660px;
-		right: 50%;
-		margin-right: -660px;
-		z-index: -1;
-	}
+    @media screen and (min-width: 768px) {
+        h1{
+            max-width: 500px;
+            margin: 6rem auto 4rem;
+        }
+        .partners {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        img {
+            max-width: 145px;
+        }
+    }
 </style>

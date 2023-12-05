@@ -14,7 +14,7 @@ let team = [
         stat: 3
     },
     {
-        title: 'transactions Analyzed',
+        title: 'Transactions Analyzed',
         stat: '10M+'
     }
 ]
@@ -34,12 +34,18 @@ let team = [
             <h4>Our Business</h4>
             <p>At the core of our platform is the technical infrastructure APIs that connect consumers. Our innovative product provides key insights for businesses and individuals, as well as robust reporting for traditional financial institutions and developers. </p>
         </div>
-        <img src='../../assets/about/mobile/image-team-members.jpg' alt="">
-        <section class="about-numbers">
-            {team.map((item) => (
-                <h5>{item.title}</h5>
-                <p class="number">{item.stat}</p>
-            ))}
+        <img src='../../assets/about/mobile/image-team-members.jpg' alt="" class="mobile-image">
+        <img src='../../assets/about/tablet/image-team-members.jpg' alt="" class="tablet-image">
+        <img src='../../assets/about/desktop/image-team-members.jpg' alt="" class="desktop-image">
+        <section>
+            <div class="about-numbers">
+                {team.map((item) => (
+                    <div class="numbers-container">
+                        <h5>{item.title}</h5>
+                        <p class="number">{item.stat}</p>
+                    </div> 
+                ))}
+            </div>   
         </section>
         <div class="about-card">
             <h4>The Culture</h4>
@@ -73,6 +79,7 @@ let team = [
         border-bottom: 1px solid rgba(54, 83, 107, 0.2);
         margin: 1rem 1rem 3rem;
         padding: 1rem 0;
+        width: 100%;
     }
     .about-card {
         display: flex;
@@ -85,35 +92,63 @@ let team = [
         width: 100%;
         margin: 2rem 0;
     }
-    h1 {
-        font-family: 'DM Serif Display', serif;
-        font-weight: 400;
-        font-size: 32px;
-        text-align: center;
-        margin: 3rem 1rem;
-        line-height: 36px;
-    }
-    h4 {
-        font-family: 'DM Serif Display', serif;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 32px;
-    }
     h5 {
         font-size: 16px;
         opacity: 70%;
         font-weight: 400;
         line-height: 28px;
+        text-align: center;
     }
-    .header-circle {
-		width: 780px;
-		height: 780px;
-		background: rgba(54,83,107,0.2);
-		border-radius: 100%;
-		position: absolute;
-		top: -660px;
-		right: 50%;
-		margin-right: -660px;
-		z-index: -1;
-	}
+    .tablet-image, .desktop-image {
+            display: none;
+        }
+    @media screen and (min-width: 768px) {
+        .about-card {
+            display: grid;
+            grid-template-columns: 223px auto;
+            margin: 3.5rem;
+            align-items: start;
+        }
+        h1{
+            max-width: 573px;
+            margin: 6rem auto 4rem;
+        }
+        h4 {
+            font-size: 32px;
+            line-height: 40px;
+        }
+        p {
+            text-align: left;
+        }
+        .mobile-image {
+            display: none;
+        }
+        .tablet-image {
+            display: block;
+        }
+        .numbers-container {
+            border-top: 1px solid rgba(54, 83, 107, 0.2);
+            border-bottom: 1px solid rgba(54, 83, 107, 0.2);
+            padding: 1.5rem 0;
+        }
+        .about-numbers {
+            margin: 1.5rem 0 0;
+            border-top: none;
+            border-bottom: none;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 1rem;
+        }
+        h5 {
+            text-align: start;
+        }
+    }
+    @media screen and (min-width: 1440px) {
+        .desktop-image {
+            display: block;
+        }
+        .tablet-image {
+            display: none;
+        }
+    }
 </style>

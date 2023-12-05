@@ -49,6 +49,20 @@ const { title } = Astro.props;
 	html::-webkit-scrollbar {
 		display: none;
 	}
+	h1 {
+        font-family: 'DM Serif Display', serif;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 36px;
+        text-align: center;
+        margin: 3rem 1rem;
+    }
+	h4 {
+		font-size: 24px;
+        line-height: 32px;
+        font-weight: 400;
+        font-family: 'DM Serif Display', serif;
+	}
 	a {
 		text-decoration: none;
 	}
@@ -77,5 +91,33 @@ const { title } = Astro.props;
 	}
 	.schedule-button:hover {
 		background-color: var(--charmPink);
+	}
+	.header-circle {
+		width: 780px;
+		height: 780px;
+		background: rgba(54,83,107,0.2);
+		border-radius: 100%;
+		position: absolute;
+		top: -660px;
+		right: 50%;
+		margin-right: -660px;
+		z-index: -1;
+	}
+	@media screen and (min-width: 768px) {
+		section {
+			padding-left: 2.5rem;
+			padding-right: 2.5rem;
+		}
+		h1 {
+            font-size: 48px;
+            line-height: 56px;
+        }
+		.schedule-button {
+			max-width: 173px;
+		}
+		.header-circle {
+            margin-right: -900px;
+            top: -470px;
+        }
 	}
 </style>

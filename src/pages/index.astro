@@ -13,7 +13,7 @@ import HomeServices from '../components/HomeServices.astro';
 <Layout title="PayAPI">
 	<header>
 		<Nav />
-		<div class="header-circle"></div>
+		<div class="home-header-circle"></div>
 		<img src="../../assets/home/desktop/illustration-phone-mockup.svg" alt="phone" class="phone">
 	</header>
 	<main>
@@ -28,10 +28,7 @@ import HomeServices from '../components/HomeServices.astro';
 </Layout>
 
 <style>
-	main {
-		
-	}
-	.header-circle {
+	.home-header-circle {
 		width: 780px;
 		height: 780px;
 		background: rgba(54,83,107,0.2);
@@ -49,5 +46,17 @@ import HomeServices from '../components/HomeServices.astro';
 		margin-left: auto;
 		margin-right: auto;
 		padding-left: 20px;
+	}
+	@media screen and (min-width: 768px) {
+		.home-header-circle {
+			width: 1100px;
+			height: 1100px;
+			margin-right: -550px;
+			top: -850px
+		}
+		.phone {
+			width: 250px;
+			height: 380px;
+		}
 	}
 </style>

@@ -58,6 +58,10 @@
     .right {
         float: right;
     }
+    p {
+        opacity: 70%;
+        max-width: 457px;
+    }
     .about {
         width: 129px;
         height: 48px;
@@ -68,11 +72,35 @@
         color: var(--linkWaterWhite);
         border-radius: 50px;
         margin-top: 1rem;
+        font-weight: 700;
+    }
+    .about:hover {
+        background-color: var(--linkWaterWhite);
+        color: var(--mirageBlue)
     }
     h3 {
         font-family: 'DM Serif Display', serif;
         line-height: 40px;
         font-size: 32px;
         text-align: center;
+    }
+    @media screen and (min-width: 768px) {
+        .partners {
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 4rem;
+        }
+        .partner {
+            margin: auto;
+        }
+        img {
+            max-width: 145px;
+        }
+        h3 {
+           font-size: 48px;
+           line-height: 56px; 
+        }
+        .header-circle {
+            top: -550px;
+        }
     }
 </style>

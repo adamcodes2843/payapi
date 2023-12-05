@@ -5,9 +5,15 @@ import SmallMenu from './SmallMenu.svelte'
 <nav class="nav">
     <a href='/' class="icon-box">
         <img src="../../assets/shared/Group-3.png" alt="icon" class="icon" />
-        <h1 style="font-weight:900">pay<span style="font-weight:100">api</span></h1>
+        <h2 style="font-weight:900">pay<span style="font-weight:100">api</span></h2>
     </a>
     <SmallMenu client:load />
+    <div class="nav-links">
+        <a href="/pricing">Pricing</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+    <a href="/contact" class="schedule-button">Schedule a Demo</a>
 </nav>
 
 <style>
@@ -33,4 +39,30 @@ import SmallMenu from './SmallMenu.svelte'
         height: 38px;
         width: 38px;
     }
+    .nav-links {
+        display: none;
+    }
+    .schedule-button {
+        display: none;
+    }
+    @media screen and (min-width: 768px) {
+        .nav {
+            margin: 2rem 2.5rem 0.5rem;
+        }
+		.nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+        .nav-links a {
+            font-weight: 700;
+            opacity: 70%;
+            color: var(--sanJuanBlue);
+        }
+        .nav-links a:hover {
+            opacity: 100%;
+        }
+        .schedule-button {
+            display: flex;
+        }
+	}
 </style>

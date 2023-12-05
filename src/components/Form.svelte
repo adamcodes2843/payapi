@@ -5,23 +5,34 @@
     let title = "";
     let message = "";
     let yes = false;
-    function handleSubmit() {
-
-    }
+    let formSubmit = false
 </script>
 
-<form on:submit={handleSubmit}>
-    <input bind:value={name} placeholder="Name"/>
-    <input bind:value={email} placeholder="Email Address"/>
-    <input bind:value={companyName} placeholder="Company Name">
-    <input bind:value={title} placeholder="Title">
-    <textarea bind:value={message} placeholder="Message" />
-    <div class="opt-in">
-        <input type="checkbox" bind:checked={yes} name="checkbox" id="checkbox">
-        <label for="checkbox">Stay up-to-date with company announcements and updates to our API</label>
-    </div>
-    <button class="submit-button" type="submit">Submit</button>
-</form>
+{#if formSubmit == false}
+    <form on:submit|preventDefault={() => formSubmit = true}>
+        <input bind:value={name} placeholder="Name"/>
+        <input bind:value={email} placeholder="Email Address"/>
+        <input bind:value={companyName} placeholder="Company Name">
+        <input bind:value={title} placeholder="Title">
+        <textarea bind:value={message} placeholder="Message" />
+        <div class="opt-in">
+            <input type="checkbox" bind:checked={yes} name="checkbox" id="checkbox">
+            <label for="checkbox">Stay up-to-date with company announcements and updates to our API</label>
+        </div>
+        <button class="submit-button" type="submit">Submit</button>
+    </form>
+{:else}
+    <section>
+        <p>Hello, <b>{name}</b>, <b>{title.toLowerCase()}</b> with <b>{companyName}</b>. We have received your help request message:</p>
+        <p class="message">{message}</p>
+        <p>We will reach out to you at <b>{email}</b> within 24 hours.</p>
+        {#if yes}
+            <p class="message">You have elected to stay up-to-date with company announcements and updates to our API. Cancel any time.</p>
+        {:else}
+            <p class="message">You can activate notifications from the email if you change your mind.</p>
+        {/if}
+    </section>
+{/if}
 
 <style>
     .submit-button {
@@ -42,6 +53,8 @@
         flex-direction: column;
         padding: 0 2.5rem;
         gap: 6px;
+        max-width: 445px;
+        margin: auto;
         margin-bottom: 5rem;
     }
     input {
@@ -70,6 +83,10 @@
         align-items: center;
         gap: 0.5rem;
         margin: 1rem 0;
+        max-width: 445px;
+    }
+    .opt-in label {
+        padding: 0 1rem;
     }
     #checkbox {
         width: 24px;
@@ -80,6 +97,7 @@
         cursor: pointer;
     }
     textarea {
+        max-width: 445px;
         font-family: 'Public Sans', sans-serif;
         font-size: 15px;
         line-height: 25px;
@@ -98,5 +116,21 @@
     textarea:focus {
         outline: none;
         opacity: 100%;
+    }
+    textarea:hover {
+        opacity: 100%;
+    }
+    p {
+        text-align: start;
+    }
+    section {
+        margin-bottom: 4rem;
+        padding: 0 2.5rem;
+        max-width: 445px;
+        margin: auto;
+        margin-bottom: 5rem;
+    }
+    .message {
+        margin: 1rem;
     }
 </style>

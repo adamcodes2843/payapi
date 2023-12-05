@@ -5,15 +5,17 @@
     <section>
         <a href='/' class="icon-box">
             <img src="../../assets/shared/Group-22.png" alt="icon" class="icon" />
-            <h1 style="font-weight:900">pay<span style="font-weight:100">api</span></h1>
+            <h2 style="font-weight:900">pay<span style="font-weight:100">api</span></h2>
         </a>
-        <a href="/pricing" class="link">Pricing</a>
-        <a href="/about" class="link">About</a>
-        <a href="/contact" class="link">Contact</a>
+        <div class="links">
+            <a href="/pricing" class="link">Pricing</a>
+            <a href="/about" class="link">About</a>
+            <a href="/contact" class="link">Contact</a>
+        </div>
         <div class="socials">
-            <a href="/"><img src="../../assets/shared/desktop/facebook.svg" alt="facebook"></a>
-            <a href="/"><img src="../../assets/shared/desktop/twitter.svg" alt="twitter"></a>
-            <a href="/"><img src="../../assets/shared/desktop/linkedin.svg" alt="linkedin"></a>
+            <a href="/"><img src="../../assets/shared/desktop/facebook.svg" alt="facebook" class="social-icon"></a>
+            <a href="/"><img src="../../assets/shared/desktop/twitter.svg" alt="twitter" class="social-icon"></a>
+            <a href="/"><img src="../../assets/shared/desktop/linkedin.svg" alt="linkedin" class="social-icon"></a>
         </div>
     </section>
     <div class="footer-circle"></div>
@@ -30,6 +32,11 @@
         color: var(--linkWaterWhite);
         padding: 3rem;
         z-index: 2;
+    }
+    .links {
+        display: flex;
+        flex-direction: column;
+        gap: 2.2rem;
     }
     footer {
 		position: relative;
@@ -76,5 +83,25 @@
         display: flex;
         align-items: center;
         gap: 2rem;
+    }
+    .social-icon:hover {
+        fill: var(--charmPink);
+    }
+    @media screen and (min-width: 768px){
+        section {
+            flex-direction: row;
+            padding: 2.2rem 3rem;
+        }
+        .links {
+            flex-direction: row;
+            gap: 2.5rem;
+        }
+        .footer-circle {
+            margin-right: -790px;
+            bottom: -550px
+        }
+        footer {
+            margin-top: 7rem;
+        }
     }
 </style>

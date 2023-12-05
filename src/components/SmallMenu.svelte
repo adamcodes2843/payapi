@@ -59,6 +59,9 @@
     .menu-link {
         opacity: 70%;
     }
+    .menu-link:hover {
+        opacity: 100%;
+    }
     a {
         color: var(--linkWaterWhite)
     }
@@ -73,4 +76,9 @@
         height: 17px;
         width: 28px;
     }
+    @media screen and (min-width: 768px) {
+		button {
+            display: none;
+        }
+	}
 </style>

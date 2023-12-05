@@ -2,18 +2,20 @@
 interface Props {
     plan: string,
     cost: string,
+    description: string,
     services: {
         service: string;
         provided: boolean;
     }[]
 };
 
-const {plan, cost, services} = Astro.props;
+const {plan, cost, description, services} = Astro.props;
 ---
 
 <div class="plan-div">
     <div class="plan-cost">
         <h4>{plan}</h4>
+        <p class="plan-description">{description}</p>
         <h2>{cost}</h2>
     </div>
     <ul>
@@ -54,6 +56,7 @@ const {plan, cost, services} = Astro.props;
         border: 1px solid var(--sanJuanBlue);
         padding: 1rem 1.5rem;
         border-radius: 40px;
+        color: var(--sanJuanBlue)
     }
     .request-access:hover {
         background-color: var(--sanJuanBlue);
@@ -64,6 +67,9 @@ const {plan, cost, services} = Astro.props;
         flex-direction: column;
         align-items: center;
         width: 100%;
+    }
+    .plan-description {
+        display: none;
     }
     .plan-cost {
         display: flex;
@@ -102,5 +108,16 @@ const {plan, cost, services} = Astro.props;
         gap: 1rem;
         width: 134px;
         font-size: 16px;
+    }
+    @media screen and (min-width: 768px) {
+        .plan-description {
+            display: block;
+        }
+        .plan-cost {
+            gap: 1rem
+        }
+        h2 {
+            font-size: 48px;
+        }
     }
 </style>

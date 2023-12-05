@@ -9,6 +9,7 @@ let plans = [
     {
         plan: 'Free Plan',
         cost: "$0.00",
+        description: "Build and test using our core set of products with up to 100 API requests",
         services: [
             {
                 service: 'Transactions',
@@ -43,6 +44,7 @@ let plans = [
     {
         plan: 'Basic Plan',
         cost: "$249.00",
+        description : "Launch your project with unlimited requests and no contractual minimums",
         services: [
             {
                 service: 'Transactions',
@@ -77,6 +79,7 @@ let plans = [
     {
         plan: 'Premium Plan',
         cost: "$499.00",
+        description : "Get tailored solutions, volume pricing, and dedicated support for your team",
         services: [
             {
                 service: 'Transactions',
@@ -119,7 +122,7 @@ let plans = [
         <h1>Pricing</h1>
         <section class="card">
             {plans.map((plan) => (
-                <PlanCard plan={plan.plan} cost={plan.cost} services={plan.services} />
+                <PlanCard plan={plan.plan} cost={plan.cost} services={plan.services} description={plan.description} />
             ))}
         </section>
         <ReadyToStart />
@@ -134,22 +137,13 @@ let plans = [
         gap: 3rem;
         margin-bottom: 5rem;
     }
-    h1 {
-        font-family: 'DM Serif Display', serif;
-        font-weight: 400;
-        font-size: 36px;
-        text-align: center;
-        margin: 3rem 0 2.5rem;
+    @media screen and (min-width: 768px) {
+        section {
+            flex-direction: row;
+            gap: 1rem;
+        }
+        h1 {
+            margin: 6rem auto 4rem;
+        }
     }
-    .header-circle {
-		width: 780px;
-		height: 780px;
-		background: rgba(54,83,107,0.2);
-		border-radius: 100%;
-		position: absolute;
-		top: -660px;
-		right: 50%;
-		margin-right: -660px;
-		z-index: -1;
-	}
 </style>
