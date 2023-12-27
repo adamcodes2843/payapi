@@ -1,12 +1,21 @@
 <script>
     let email = "";
     let demoScheduled = false;
+    let demoWarning = false;
     function enterKey(e) {
         if (e.key === 'Enter') {
             demoScheduled = true;
         }
     }
     let emailCheck = /^\S+@\S+\.\S+$/
+    let scheduleDemoClick = () => {
+        if (emailCheck.test(email)) {
+            demoScheduled = true;
+            demoWarning = false;
+        } else {
+            demoWarning = true;
+        }
+    }
 </script>
 
 <div style="position:relative">
@@ -17,12 +26,12 @@
         placeholder="Enter email address"
         on:keypress={(e) => enterKey(e)}
     >
-    <button disabled={demoScheduled || emailCheck.test(email) == false} type="button" on:click={() => demoScheduled = true} class="schedule-button">Schedule a Demo</button>
+    <button disabled={demoScheduled} type="button" on:click={() => scheduleDemoClick()} class="schedule-button">Schedule a Demo</button>
     {:else}
     <p>An email has been sent to {email}!</p>
     {/if}
-    {#if emailCheck.test(email) == false && email.length > 4}
-    <p style="position:absolute; top:-30px; left: 15px; font-weight: 700; color: red">Please enter a valid email</p>
+    {#if emailCheck.test(email) == false && demoWarning}
+    <p style="position:absolute; top:-30px; left: 15px; font-weight: 700; color: red; font-size: 14px;">Please enter a valid email</p>
     {/if}
 </div>
 
