@@ -6,9 +6,10 @@
             demoScheduled = true;
         }
     }
+    let emailCheck = /^\S+@\S+\.\S+$/
 </script>
 
-<div>
+<div style="position:relative">
     {#if demoScheduled == false}
     <input 
         type="text" 
@@ -16,9 +17,12 @@
         placeholder="Enter email address"
         on:keypress={(e) => enterKey(e)}
     >
-    <button disabled={demoScheduled} type="button" on:click={() => demoScheduled = true} class="schedule-button">Schedule a Demo</button>
+    <button disabled={demoScheduled || emailCheck.test(email) == false} type="button" on:click={() => demoScheduled = true} class="schedule-button">Schedule a Demo</button>
     {:else}
     <p>An email has been sent to {email}!</p>
+    {/if}
+    {#if emailCheck.test(email) == false && email.length > 4}
+    <p style="position:absolute; top:-30px; left: 15px; font-weight: 700; color: red">Please enter a valid email</p>
     {/if}
 </div>
 
@@ -58,6 +62,12 @@
         button {
             position: absolute;
             right: 0;
+        }
+    }
+    @media screen and (min-width: 1440px) {
+        div {
+            margin: 0;
+            width: 445px;
         }
     }
 </style>

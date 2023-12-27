@@ -3,8 +3,9 @@
 ---
 
 <section>
+    <div class="header-circle"></div>
     <img src="../../assets/home/desktop/illustration-simple-ui.svg" alt="">
-    <div>
+    <div class="container">
         <h2>Simple UI & UX</h2>
         <p>Our pre-built form is easy to integrate in your app or website’s checkout flow and designed to optimize conversion. </p>
     </div>
@@ -33,6 +34,9 @@
         max-width: 130%;
         margin-left: 2rem;
     }
+    .header-circle {
+        display: none;
+    }
     @media screen and (min-width: 768px) {
         h2 {
             line-height: 56px;
@@ -43,6 +47,39 @@
         }
         img {
             max-width: 450px;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        section {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            position: relative;
+        }
+        .container {
+            width: 445px;
+            margin-left: 5rem;
+        }
+        h2 {
+            text-align: left;
+        }
+        p {
+            text-align: left;
+            width: 445px;
+        }
+        img {
+            max-width: 800px;
+        }
+        .header-circle {
+            display: block;
+            width: 780px;
+		    height: 780px;
+		    background: rgba(54,83,107,0.2);
+		    border-radius: 100%;
+		    position: absolute;
+            z-index: -1;
+            top: -55px;
+            right: 35%;
         }
     }
 </style>

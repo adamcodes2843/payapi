@@ -114,6 +114,7 @@ let plans = [
 ]
 ---
 <Layout title="PayAPI Pricing">
+    <div class="whole-container">
     <header>
         <Nav />
         <div class="header-circle"></div>
@@ -127,7 +128,10 @@ let plans = [
         </section>
         <ReadyToStart />
     </main>
-    <Footer />
+    <div class="footer-div">
+        <Footer />
+    </div>
+    </div>
 </Layout>
 
 <style>
@@ -144,6 +148,26 @@ let plans = [
         }
         h1 {
             margin: 6rem auto 4rem;
+        }
+    }
+    @media screen and (min-width: 1440px) {
+        h1 {
+            font-size: 56px;
+            text-align: left;
+            margin-right: 5rem;
+            margin-left: 5rem;
+            padding-left: 5rem;
+            padding-right: 5rem;
+        }
+        .header-circle {
+            width: 780px;
+			height: 780px;
+			top: -560px;
+			margin-right: -900px;
+        }
+        section {
+            margin-right: 5rem;
+            margin-left: 5rem;
         }
     }
 </style>

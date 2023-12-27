@@ -6,12 +6,14 @@ import ReadyToStart from '../components/ReadyToStart.astro';
 import Form from '../components/Form.svelte'
 ---
 <Layout title="PayAPI Contact">
+    <div class="whole-container">
     <header>
         <Nav />
         <div class="header-circle"></div>
     </header>
     <main>
         <h1>{"Submit a help request and we'll get in touch shortly."}</h1>
+        <div class="form-partners-container">
         <Form client:load />
         <section class="partner-section">
             <h4> Join the thousands of innovators already building with us</h4>
@@ -24,9 +26,13 @@ import Form from '../components/Form.svelte'
                 <img src="../../assets/shared/desktop/nvidia.svg" alt="nvidia" class="partner">
             </div>
         </section>
+        </div>
         <ReadyToStart />
     </main>
-    <Footer />
+    <div class="footer-container">
+        <Footer />
+    </div>
+    </div>
 </Layout>
 
 <style>
@@ -59,6 +65,39 @@ import Form from '../components/Form.svelte'
         }
         img {
             max-width: 145px;
+        }
+    }
+    @media screen and (min-width: 1440px) {
+        .header-circle {
+            width: 780px;
+			height: 780px;
+			top: -560px;
+			margin-right: -900px;
+        }
+        section {
+            margin-right: 5rem;
+            margin-left: 5rem;
+        }
+        h1 {
+            max-width: 650px;
+            font-size: 56px;
+            line-height: 56px;
+            text-align: left;
+            margin-right: 5rem;
+            margin-left: 5rem;
+            padding-left: 5rem;
+            padding-right: 5rem;
+        }
+        .form-partners-container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-right: 10rem;
+            margin-left: 10rem;
+        }
+        h4 {
+            text-align: start;
+            max-width: 500px;
         }
     }
 </style>

@@ -11,20 +11,26 @@ import HomeServices from '../components/HomeServices.astro';
 ---
 
 <Layout title="PayAPI">
+	<div class="whole-container">
 	<header>
 		<Nav />
 		<div class="home-header-circle"></div>
-		<img src="../../assets/home/desktop/illustration-phone-mockup.svg" alt="phone" class="phone">
+		<div class="phone-start">
+			<img src="../../assets/home/desktop/illustration-phone-mockup.svg" alt="phone" class="phone">
+			<HomeStart />
+		</div>
 	</header>
 	<main>
-		<HomeStart />
 		<Connections />
 		<EasyToImplement />
 		<SimpleUI />
 		<HomeServices />
 		<ReadyToStart />
 	</main>
-	<Footer />
+	<div class="footer-div">
+		<Footer />
+	</div>
+	</div>
 </Layout>
 
 <style>
@@ -55,8 +61,29 @@ import HomeServices from '../components/HomeServices.astro';
 			top: -850px
 		}
 		.phone {
-			width: 250px;
-			height: 380px;
+			width: 280px;
+			height: 420px;
+		}
+	}
+	@media screen and (min-width: 1440px) {
+		.home-header-circle {
+			width: 780px;
+			height: 780px;
+			top: -250px;
+			margin-right: -900px;
+		}
+		.phone-start {
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+			margin: 4rem 10rem;
+			align-items: center;
+		}
+		.phone {
+			height: 600px;
+			width: 400px;
+			margin: 0;
+			margin-top: -2rem;
 		}
 	}
 </style>

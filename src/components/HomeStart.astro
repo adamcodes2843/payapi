@@ -3,7 +3,7 @@ import EmailDemo from "./EmailDemo.svelte";
 ---
 
 <section>
-    <h1>Start building with our <br/>APIs for absolutely free.</h1>
+    <h1>Start building with our APIs for absolutely free.</h1>
     <EmailDemo client:visible />
     <p>Have any questions? <a href="/contact"><strong>Contact Us</strong></a></p>
 </section>
@@ -19,14 +19,24 @@ import EmailDemo from "./EmailDemo.svelte";
         margin-bottom: 4rem;
     }
     h1 {
-        margin: -1.5rem 0 1.5rem;
+        margin: -1.5rem auto 1.5rem;
+        max-width: 573px;
     }
     br {
         display: none;
     }
-    @media screen and (min-width: 768px) {
-        br {
-            display: block;
+    @media screen and (min-width: 1440px) {
+        h1 {
+            margin: 0 0 3rem;
+            text-align: left;
+        }
+        section {
+            margin: 0;
+            padding: 0;
+        }
+        p {
+            margin: 1rem 1.5rem 0;
+            text-align: left;
         }
     }
 </style>

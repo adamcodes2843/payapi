@@ -5,21 +5,49 @@
     let title = "";
     let message = "";
     let yes = false;
-    let formSubmit = false
+    let formSubmit = false;
+    let showAlert = false;
+    let emailCheck = /^\S+@\S+\.\S+$/
+    const submitForm = () => {
+        if (name && email && emailCheck.test(email) && companyName && title && message) {
+            formSubmit = true
+        }
+    }
+    const showMissingInfo = () => {
+        showAlert = true
+    }
 </script>
 
 {#if formSubmit == false}
-    <form on:submit|preventDefault={() => formSubmit = true}>
-        <input bind:value={name} placeholder="Name"/>
-        <input bind:value={email} placeholder="Email Address"/>
-        <input bind:value={companyName} placeholder="Company Name">
-        <input bind:value={title} placeholder="Title">
-        <textarea bind:value={message} placeholder="Message" />
+    <form on:submit|preventDefault={() => submitForm()}>
+        <input bind:value={name} placeholder="Name" class={showAlert && !name ? 'red-input' : 'normal-input'}/>
+        {#if !name && showAlert}
+            <p style="color:red; font-weight: 400; padding-left: 15px">This field can't be empty</p>
+        {/if}
+        <input bind:value={email} placeholder="Email Address" class={showAlert && !email || showAlert && emailCheck.test(email) == false ? 'red-input' : 'normal-input'}/>
+        {#if !email && showAlert}
+            <p style="color:red; font-weight: 400; padding-left: 15px">This field can't be empty</p>
+        {/if}
+        {#if emailCheck.test(email) == false && email && showAlert}
+            <p style="color:red; font-weight: 400; padding-left: 15px">Please enter a valid email</p>
+        {/if}
+        <input bind:value={companyName} placeholder="Company Name" class={showAlert && !companyName ? 'red-input' : 'normal-input'}>
+        {#if !companyName && showAlert}
+            <p style="color:red; font-weight: 400; padding-left: 15px">This field can't be empty</p>
+        {/if}
+        <input bind:value={title} placeholder="Title" class={showAlert && !title ? 'red-input' : 'normal-input'}>
+        {#if !title && showAlert}
+            <p style="color:red; font-weight: 400; padding-left: 15px">This field can't be empty</p>
+        {/if}
+        <textarea bind:value={message} placeholder="Message" class={showAlert && !message ? 'red-input' : 'normal-input'}/>
+        {#if !message && showAlert}
+            <p style="color:red; font-weight: 400; padding-left: 15px">This field can't be empty</p>
+        {/if}
         <div class="opt-in">
             <input type="checkbox" bind:checked={yes} name="checkbox" id="checkbox">
             <label for="checkbox">Stay up-to-date with company announcements and updates to our API</label>
         </div>
-        <button class="submit-button" type="submit">Submit</button>
+        <button class="submit-button" type="submit" on:click={showMissingInfo}>Submit</button>
     </form>
 {:else}
     <section>
@@ -78,6 +106,13 @@
     input:hover {
         opacity: 100%;
     }
+    input[type=checkbox] {
+        accent-color: var(--darkPink);
+    }
+    .red-input {
+        color: red;
+        border-bottom: 1px solid red;
+    }
     .opt-in {
         display: flex;
         align-items: center;
@@ -132,5 +167,10 @@
     }
     .message {
         margin: 1rem;
+    }
+    @media screen and (min-width: 1440px) {
+        form {
+            padding: 0;
+        }
     }
 </style>

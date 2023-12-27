@@ -20,6 +20,7 @@ let team = [
 ]
 ---
 <Layout title="PayAPI About">
+    <div class="whole-container">
     <header>
         <Nav />
         <div class="header-circle"></div>
@@ -34,6 +35,7 @@ let team = [
             <h4>Our Business</h4>
             <p>At the core of our platform is the technical infrastructure APIs that connect consumers. Our innovative product provides key insights for businesses and individuals, as well as robust reporting for traditional financial institutions and developers. </p>
         </div>
+        <div class="desktop-circle"/>
         <img src='../../assets/about/mobile/image-team-members.jpg' alt="" class="mobile-image">
         <img src='../../assets/about/tablet/image-team-members.jpg' alt="" class="tablet-image">
         <img src='../../assets/about/desktop/image-team-members.jpg' alt="" class="desktop-image">
@@ -57,7 +59,10 @@ let team = [
         </div>
         <ReadyToStart />
     </main>
-    <Footer />
+    <div class="footer-container">
+        <Footer />
+    </div>
+    </div>
 </Layout>
 
 <style>
@@ -99,7 +104,7 @@ let team = [
         line-height: 28px;
         text-align: center;
     }
-    .tablet-image, .desktop-image {
+    .tablet-image, .desktop-image, .desktop-circle {
             display: none;
         }
     @media screen and (min-width: 768px) {
@@ -149,6 +154,42 @@ let team = [
         }
         .tablet-image {
             display: none;
+        }
+        .header-circle {
+            width: 780px;
+			height: 780px;
+			top: -560px;
+			margin-right: -900px;
+        }
+        .desktop-circle {
+            display: block;
+            width: 780px;
+			height: 780px;
+		    background: rgba(54,83,107,0.2);
+		    border-radius: 100%;
+		    position: absolute;
+            z-index: -1;
+            margin-left: -550px;
+            top: 520px;
+        }
+        section {
+            margin-right: 5rem;
+            margin-left: 5rem;
+        }
+        h1 {
+            max-width: 650px;
+            font-size: 56px;
+            line-height: 56px;
+            text-align: left;
+            margin-right: 5rem;
+            margin-left: 10rem;
+            padding-left: 10rem;
+        }
+        .about-card {
+            margin-left: 5rem;
+            margin-right: 5rem;
+            padding-right: 10rem;
+            padding-left: 10rem;
         }
     }
 </style>

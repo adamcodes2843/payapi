@@ -21,7 +21,11 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<div class="side-panal"/>
+		<div>
+			<slot class="page" />
+		</div>
+		<div class="side-panal"/>
 	</body>
 </html>
 <style is:global>
@@ -103,6 +107,21 @@ const { title } = Astro.props;
 		margin-right: -660px;
 		z-index: -1;
 	}
+	.side-panal {
+		display: none
+	}
+	body {
+		min-height: 100vh;
+	}
+	.footer-div {
+		margin-top: auto;
+	}
+	.whole-container {
+		display: flex;
+  		min-height: 100vh;
+  		flex-direction: column;
+  		justify-content: flex-start;
+	}
 	@media screen and (min-width: 768px) {
 		section {
 			padding-left: 2.5rem;
@@ -119,5 +138,35 @@ const { title } = Astro.props;
             margin-right: -900px;
             top: -470px;
         }
+	}
+	@media screen and (min-width: 1440px) {
+		body {
+			display: flex;
+		}
+		h1 {
+			font-size: 72px;
+			line-height: 72px;
+		}
+		section {
+			padding-left: 5rem;
+			padding-right: 5rem;
+		}
+		.side-panal {
+			display: block;
+			background-color: var(--sanJuanBlue);
+			width: 100%;
+		}
+		main {
+			width: 1440px;
+			margin: auto;
+		}
+		header {
+			width: 1440px;
+			margin: auto;
+		}
+		footer {
+			width: 1440px;
+			margin: auto;
+		}
 	}
 </style>

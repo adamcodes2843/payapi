@@ -2,8 +2,10 @@
 ---
 <section>
     <img src="../../public/assets/shared/Group-14.svg" alt="">
-    <h2>Easy  to implement</h2>
-    <p>Our API comes with just a few lines of code. You’ll be up and running in no time. We built our documentation page to integrate payments functionality with ease.</p>
+    <div class="container">
+        <h2>Easy  to implement</h2>
+        <p>Our API comes with just a few lines of code. You’ll be up and running in no time. We built our documentation page to integrate payments functionality with ease.</p>
+    </div>
 </section>
 
 <style>
@@ -33,6 +35,27 @@
         }
         p {
             max-width: 573px;
+        }
+    }
+    @media screen and (min-width: 1440px) {
+        section {
+            flex-direction: row;
+            justify-content: left;
+        }
+        .container {
+            width: 445px;
+            margin-left: 5rem;
+        }
+        h2 {
+            text-align: left;
+        }
+        p {
+            text-align: left;
+            width: 445px;
+        }
+        img {
+            width: 600px;
+            margin-left: 1rem;
         }
     }
 </style>
