@@ -110,9 +110,13 @@
         accent-color: var(--darkPink);
     }
     .red-input {
-        color: red;
         border-bottom: 1px solid red;
+        color: red;
     }
+    .red-input::placeholder {
+        color: red;
+    }
+    
     .opt-in {
         display: flex;
         align-items: center;
